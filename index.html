@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧬 Store Brainrots 🧬</title>
+  <style>
+    body { background-color: #0e0e0e; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    .botoes button { padding: 10px 20px; margin: 10px; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; }
+    .comprar { background-color: #007bff; color: white; }
+    .duvidas { background-color: #28a745; color: white; }
+    .roleta { background-color: #ffc107; color: black; }
+    .produto { background-color: #222; margin: 20px auto; padding: 15px; width: 90%; max-width: 400px; border-radius: 10px; }
+    .preco { color: lime; font-size: 1.2em; margin: 10px 0; }
+    .pixbox { background: #333; padding: 10px; margin: 10px auto; border-radius: 5px; word-wrap: break-word; }
+    .botao-voltar, .copiar { padding: 10px 20px; border: none; margin: 10px 5px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .copiar { background-color: #6c757d; color: white; }
+    .botao-voltar { background-color: #dc3545; color: white; }
+  </style>
+  <script>
+    function copiarPix(texto) {
+      navigator.clipboard.writeText(texto).then(() => {
+        alert('Código Pix copiado com sucesso!');
+      });
+    }
+    function voltarInicio() {
+      document.getElementById('conteudo').innerHTML = '';
+    }
+    function exibirProdutos() {
+      document.getElementById('conteudo').innerHTML = `
+    <div class="produto">
+      <h2>🦈 Tralalelitos</h2>
+      <div class="preco">R$ 10,00</div>
+      <div class="pixbox" id="pix1">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540510.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304409D</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix1').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🦈🥇 Tralalelitos GOLD</h2>
+      <div class="preco">R$ 11,00</div>
+      <div class="pixbox" id="pix2">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540511.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304A1E1</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix2').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🦈💎 Tralalelitos DIAMOND</h2>
+      <div class="preco">R$ 12,00</div>
+      <div class="pixbox" id="pix3">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540512.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963049244</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix3').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🦈🌈 Tralalelitos RAINBOW</h2>
+      <div class="preco">R$ 15,00</div>
+      <div class="pixbox" id="pix4">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540515.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963041472</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix4').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🐮🪐 Vaca Saturnita</h2>
+      <div class="preco">R$ 8,00</div>
+      <div class="pixbox" id="pix5">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c32452040000530398654048.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f7879630467E8</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix5').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🥇🐮🪐 Vaca Saturnita GOLD</h2>
+      <div class="preco">R$ 9,00</div>
+      <div class="pixbox" id="pix6">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c32452040000530398654049.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963048694</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix6').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>💎🐮🪐 Vaca Saturnita DIAMOND</h2>
+      <div class="preco">R$ 10,00</div>
+      <div class="pixbox" id="pix7">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540510.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304409D</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix7').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🌈🐮🪐 Vaca Saturnita RAINBOW</h2>
+      <div class="preco">R$ 13,00</div>
+      <div class="pixbox" id="pix8">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540513.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963047338</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix8').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🪼 Medusi</h2>
+      <div class="preco">R$ 15,00</div>
+      <div class="pixbox" id="pix9">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540515.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963041472</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix9').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🥇🪼 Medusi GOLD</h2>
+      <div class="preco">R$ 16,00</div>
+      <div class="pixbox" id="pix10">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540516.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f7879630427D7</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix10').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>💎🪼 Medusi DIAMOND</h2>
+      <div class="preco">R$ 17,00</div>
+      <div class="pixbox" id="pix11">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540517.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304C6AB</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix11').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🌈🪼 Medusi RAINBOW</h2>
+      <div class="preco">R$ 20,00</div>
+      <div class="pixbox" id="pix12">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540520.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304E3AD</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix12').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🧪🧫🧬 Lá Combinasione</h2>
+      <div class="preco">R$ 20,00</div>
+      <div class="pixbox" id="pix13">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540520.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304E3AD</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix13').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🥇🧪🧫🧬 Lá Combinasione GOLD</h2>
+      <div class="preco">R$ 21,00</div>
+      <div class="pixbox" id="pix14">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540521.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f7879630402D1</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix14').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>💎🧪🧫🧬 Lá Combinasione DIAMOND</h2>
+      <div class="preco">R$ 22,00</div>
+      <div class="pixbox" id="pix15">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540522.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963043174</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix15').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    
+    <div class="produto">
+      <h2>🌈🧪🧫🧬 Lá Combinasione RAINBOW</h2>
+      <div class="preco">R$ 25,00</div>
+      <div class="pixbox" id="pix16">00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540525.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304B742</div>
+      <button class="copiar" onclick="copiarPix(document.getElementById('pix16').textContent)">📋 Copiar Pix</button>
+      <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+    </div>
+    `;
+    }
+    function exibirDuvidas() {
+      document.getElementById('conteudo').innerHTML = `
+        <h2>❓ Dúvidas Frequentes</h2>
+        <p><strong>1. A entrega é feita?</strong><br>Sim, imediatamente após o pagamento via Pix você recebe uma conta automática com código e usuário.</p>
+        <p><strong>2. Qual o método de pagamento?</strong><br>Via Pix. É só copiar o código Pix e colar no seu banco.</p>
+        <p><strong>3. Atendimento?</strong><br>24 horas por dia via nossa plataforma.</p>
+        <button class='botao-voltar' onclick='voltarInicio()'>⬅ VOLTAR</button>
+      `;
+    }
+    function exibirRoleta() {
+      document.getElementById('conteudo').innerHTML = `
+        <h2>🎯 Roletinha</h2>
+        <p>Escolha um valor e copie o Pix correspondente:</p>
+        <button class="copiar" onclick="mostrarPix('5')">1 Giro – R$5</button>
+        <button class="copiar" onclick="mostrarPix('15')">3 Giros – R$15</button>
+        <button class="copiar" onclick="mostrarPix('20')">5 Giros – R$20</button>
+        <div id="pixRoleta"></div>
+        <button class="botao-voltar" onclick="voltarInicio()">⬅ VOLTAR</button>
+      `;
+    }
+    function mostrarPix(valor) {
+      const pixCodes = {
+        '5': '00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c32452040000530398654045.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963044800',
+        '15': '00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540515.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f787963041472',
+        '20': '00020126580014br.gov.bcb.pix013669c1fdc1-8489-4e73-86fa-e3153fb4c324520400005303986540520.005802BR5924LUCIVANIA DE SOUZA PAIVA6015CACHOEIRA DO PI6211050726f78796304E3AD'
+      };
+      document.getElementById('pixRoleta').innerHTML = `
+        <div class="pixbox">${pixCodes[valor]}</div>
+        <button class="copiar" onclick="copiarPix(pixCodes[valor])">📋 Copiar Pix</button>
+      `;
+    }
+  </script>
+</head>
+<body>
+  <h1>🧬 Store Brainrots 🧬</h1>
+  <div class="botoes">
+    <button class="comprar" onclick="exibirProdutos()">COMPRAR</button>
+    <button class="roleta" onclick="exibirRoleta()">ROLETINHA</button>
+    <button class="duvidas" onclick="exibirDuvidas()">DÚVIDAS</button>
+  </div>
+  <div id="conteudo"></div>
+</body>
+</html>
